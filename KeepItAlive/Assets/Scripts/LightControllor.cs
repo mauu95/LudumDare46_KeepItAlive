@@ -43,6 +43,7 @@ public class LightControllor : MonoBehaviour {
             PickableObject po = collision.GetComponent<PickableObject>();
             if (po.isGood) GotGoodStuff();
             else GotBadStuff();
+            Destroy(collision.gameObject);
         }
     }
 }
