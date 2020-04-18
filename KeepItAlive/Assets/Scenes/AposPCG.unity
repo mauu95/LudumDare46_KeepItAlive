@@ -393,10 +393,10 @@ MonoBehaviour:
     type: 3}
   goodPickable: {fileID: 999896434966783067, guid: bc840e2838c373a4e9719e141bcf00a8,
     type: 3}
-  badPickable: {fileID: 7309088251054076437, guid: 40a026f7ca173ce45b067c10492b71d2,
-    type: 3}
-  platformPrefab: {fileID: 6689296627381767276, guid: d360b0825baa4b4478aa2cb543d1db2e,
-    type: 3}
+  cosi:
+  - {fileID: 7309088251054076437, guid: 40a026f7ca173ce45b067c10492b71d2, type: 3}
+  - {fileID: 6689296627381767276, guid: d360b0825baa4b4478aa2cb543d1db2e, type: 3}
+  difficulty: 0
 --- !u!4 &597918135
 Transform:
   m_ObjectHideFlags: 0

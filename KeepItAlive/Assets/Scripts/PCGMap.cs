@@ -8,11 +8,10 @@ public class PCGMap : MonoBehaviour {
     public Transform player;
     public GameObject background;
     public GameObject goodPickable;
-    public GameObject badPickable;
-    public GameObject platformPrefab;
+    public GameObject[] cosi;
 
     private IteratorSeed iseed;
-    private int difficulty;
+    public int difficulty;
     private int counter;
     private GameObject map;
     private PlayerMovement playerMovement;
@@ -21,14 +20,14 @@ public class PCGMap : MonoBehaviour {
         iseed = new IteratorSeed(seed);
         map = CreateEmptyGameObject("map");
         playerMovement = player.GetComponent<PlayerMovement>();
+        difficulty = 0;
         CreateChunk(0);
     }
 
     private void Update() {
         int current = Mathf.FloorToInt(player.position.x / 100);
-        if (current >= counter) {
+        if (current >= counter)
             CreateChunk(++counter);
-        }
     }
 
     private void CreateChunk(int nChunk) {
@@ -39,11 +38,26 @@ public class PCGMap : MonoBehaviour {
         // generate the background
         Instantiate(background, new Vector3(nChunk * 100, 0f), Quaternion.identity, currentChunk.transform);
 
-        //generate the green cosi
+        //generate the (minimum) green cosi
         for (int i = 0; i < greenCosiCount; i++) {
             PlaceCoso(goodPickable, -50 + i * 100 / greenCosiCount, iseed.Next(10) + 1, currentChunk.transform);
         }
 
+        // every 10 meter place a coso
+        for(int i = 0; i < 10; i++)
+        {
+            int rand = iseed.Next(cosi.Length);
+            GameObject spawn;
+            if (iseed.Next(10) < 10 - difficulty)
+                spawn = goodPickable;
+            else
+                spawn = cosi[rand];
+
+            PlaceCoso(spawn, i*10, iseed.Next(10) + 1, currentChunk.transform);
+        }
+
+        if (counter % 2 == 0)
+            difficulty++;
 
     }
 
