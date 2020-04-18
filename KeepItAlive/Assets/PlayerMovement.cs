@@ -4,15 +4,46 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float jumpForce = 10;
+    public float speed = 400f;
+    public GameObject GroundCheck;
+    public LayerMask playerMask;
+
+    private float horizontalMove = 0f;
+    private Vector3 m_Velocity = Vector3.zero;
+    private Rigidbody2D m_Rigidbody2D;
+    private bool isGrounded = false;
+
+    private void Start()
     {
-        
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+    }
+
+    private void FixedUpdate()
+    {
+        Move(horizontalMove * Time.fixedDeltaTime);
+        if (Input.GetButtonDown("Jump"))
+            Jump();
+        isGrounded = Physics2D.Linecast(transform.position, GroundCheck.transform.position, playerMask);
+    }
+
+    public void Move(float move)
+    {
+        Vector3 targetVelocity = new Vector2(move, m_Rigidbody2D.velocity.y);
+        m_Rigidbody2D.velocity = targetVelocity;
+    }
+
+    public void Jump()
+    {
+        if (isGrounded)
+        {
+            m_Rigidbody2D.velocity += jumpForce * Vector2.up;
+            isGrounded = false;
+        }
     }
 }
