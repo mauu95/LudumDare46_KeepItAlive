@@ -4,7 +4,7 @@ using UnityEngine;
 //using UnityEngine.Experimental.Rendering.LWRP;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class LightContreller : MonoBehaviour {
+public class LightControllor : MonoBehaviour {
     public float lightSize = 10f;
     public float lightSizeCap = 10f;
     public float timeBetweenGlowDown = 5f;
@@ -24,19 +24,19 @@ public class LightContreller : MonoBehaviour {
             lightSize -= 1;
             elapsedTime = 0;
         }
-        sceneLight.pointLightOuterRadius = Mathf.Lerp(sceneLight.pointLightOuterRadius, lightSize, Time.deltaTime);
+        sceneLight.pointLightOuterRadius = Mathf.Lerp(sceneLight.pointLightOuterRadius, lightSize, 5 * Time.deltaTime);
         // TODO: check for gameover
     }
 
     public void GotGoodStuff() {
-        lightSize += 1;
+        lightSize += 2;
         if (lightSize > lightSizeCap)
             lightSize = lightSizeCap;
         elapsedTime = 0;
     }
 
     public void GotBadStuff() {
-        lightSize--;
+        lightSize -= 2;
 
     }
 
