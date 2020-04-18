@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     public float speed = 5;
     public float jumpForce = 10;
+    public float acceleration = 0.1f;
 
-    private bool isGrounded;
     private Rigidbody2D m_Rigidbody2D;
 
     private void Start() {
@@ -16,16 +16,16 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         Move(speed);
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
             Jump();
-        if (gameObject.transform.position.y < 0) {
-            GameManager.instance.EndGame();
-        }
+        speed += acceleration * Time.deltaTime;
+        //if (gameObject.transform.position.y < 0) {
+        //    GameManager.instance.EndGame();
+        //}
     }
 
     private void Jump() {
-        m_Rigidbody2D.velocity += jumpForce * Vector2.up;
-        isGrounded = false;
+        m_Rigidbody2D.velocity += Time.deltaTime * jumpForce * Vector2.up;
     }
 
     private void Move(float speed) {
@@ -34,6 +34,6 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        isGrounded = true;
+
     }
 }
