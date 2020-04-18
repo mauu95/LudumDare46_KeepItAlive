@@ -1,46 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float speed = 5;
     public float jumpForce = 10;
-    public float speed = 400f;
-    public GameObject GroundCheck;
-    public LayerMask playerMask;
+    public bool isGrounded;
 
-    private float horizontalMove = 0f;
-    private Vector3 m_Velocity = Vector3.zero;
     private Rigidbody2D m_Rigidbody2D;
-    public bool isGrounded = false;
 
     private void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
-        Move(horizontalMove * Time.fixedDeltaTime);
-        if (Input.GetKeyDown(KeyCode.Space))
+        Move(speed);
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             Jump();
-        isGrounded = Physics2D.Linecast(transform.position, GroundCheck.transform.position, playerMask);
     }
 
-
-    public void Move(float move)
+    private void Jump()
     {
-        Vector3 targetVelocity = new Vector2(move, m_Rigidbody2D.velocity.y);
+        m_Rigidbody2D.velocity += jumpForce * Vector2.up;
+        isGrounded = false;
+    }
+
+    private void Move(float speed)
+    {
+        Vector3 targetVelocity = new Vector2(speed, m_Rigidbody2D.velocity.y);
         m_Rigidbody2D.velocity = targetVelocity;
     }
 
-    public void Jump()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isGrounded)
-        {
-            m_Rigidbody2D.velocity += jumpForce * Vector2.up;
-            isGrounded = false;
-        }
+        isGrounded = true;
     }
 }
