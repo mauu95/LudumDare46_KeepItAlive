@@ -40,13 +40,13 @@ public class PCGMap : MonoBehaviour
         currentChunk.transform.SetParent(map.transform);
 
         Instantiate(background, new Vector3(nChunk*100, 0f), Quaternion.identity ,currentChunk.transform);
-        CreatePlatform(0f, 8f, currentChunk.transform);
+
 
     }
 
-    private void CreatePlatform(float x, float y, Transform parent)
+    private void PlaceCoso(GameObject coso, float x, float y, Transform parent)
     {
-        GameObject temp = Instantiate(platformPrefab, new Vector3(x + parent.position.x, y), Quaternion.identity, parent);
+        GameObject temp = Instantiate(coso, new Vector3(x + parent.position.x, y), Quaternion.identity, parent);
     }
 
     private GameObject CreateEmptyGameObject(string name)
