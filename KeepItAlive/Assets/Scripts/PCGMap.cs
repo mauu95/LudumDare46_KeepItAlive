@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public class PCGMap : MonoBehaviour
     public int seed;
     public Transform player;
     public GameObject background;
+    public GameObject goodPickable;
+    public GameObject badPickable;
+    public GameObject platformPrefab;
 
     private IteratorSeed iseed;
     private int difficulty;
@@ -32,11 +36,19 @@ public class PCGMap : MonoBehaviour
     private void CreateChunk(int nChunk)
     {
         GameObject currentChunk = CreateEmptyGameObject("Chunk" + counter.ToString());
+        currentChunk.transform.position = new Vector3(nChunk * 100, 0f);
         currentChunk.transform.SetParent(map.transform);
 
         Instantiate(background, new Vector3(nChunk*100, 0f), Quaternion.identity ,currentChunk.transform);
+        CreatePlatform(23f, 8f, 20f, currentChunk.transform);
+
     }
 
+    private void CreatePlatform(float x, float y, float length, Transform parent)
+    {
+        GameObject temp = Instantiate(platformPrefab, new Vector3(x + length/2, y), Quaternion.identity, parent);
+        temp.transform.localScale = new Vector3(length, 1f);
+    }
 
     private GameObject CreateEmptyGameObject(string name)
     {
