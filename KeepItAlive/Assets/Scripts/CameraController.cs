@@ -5,9 +5,15 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform player;
+    private float offset;
+
+    private void Start()
+    {
+        offset = transform.position.x;
+    }
 
     private void Update()
     {
-        transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(player.position.x + offset, transform.position.y, transform.position.z);
     }
 }
