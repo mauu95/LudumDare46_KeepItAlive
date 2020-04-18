@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMove = 0f;
     private Vector3 m_Velocity = Vector3.zero;
     private Rigidbody2D m_Rigidbody2D;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
 
     private void Start()
     {
@@ -22,15 +22,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
-    }
-
-    private void FixedUpdate()
-    {
         Move(horizontalMove * Time.fixedDeltaTime);
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space))
             Jump();
         isGrounded = Physics2D.Linecast(transform.position, GroundCheck.transform.position, playerMask);
     }
+
 
     public void Move(float move)
     {
