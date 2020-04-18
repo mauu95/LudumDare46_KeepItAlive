@@ -17,7 +17,6 @@ public class LightContreller : MonoBehaviour {
         sceneLight.pointLightOuterRadius = lightSize;
     }
 
-    // Update is called once per frame
     void Update() {
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= timeBetweenGlowDown) {
@@ -37,7 +36,6 @@ public class LightContreller : MonoBehaviour {
 
     public void GotBadStuff() {
         lightSize--;
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
