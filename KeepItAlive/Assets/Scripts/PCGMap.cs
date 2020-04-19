@@ -20,7 +20,7 @@ public class PCGMap : MonoBehaviour {
         iseed = new IteratorSeed(seed);
         map = CreateEmptyGameObject("map");
         playerMovement = player.GetComponent<PlayerMovement>();
-        difficulty = 0;
+        difficulty = 4;
         CreateChunk(0);
     }
 
