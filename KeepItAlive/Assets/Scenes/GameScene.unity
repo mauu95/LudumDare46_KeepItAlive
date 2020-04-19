@@ -688,6 +688,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &981758977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6467433138197613917, guid: f4ad9a475ec12d941ad6b0faf61b7a87,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666640154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &981758978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981758977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe5ce4f40f444926887c655b6a49315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRB: {fileID: 1257572837}
 --- !u!1 &1257572835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,7 +1023,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuoco
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6738130352382528483, guid: f4ad9a475ec12d941ad6b0faf61b7a87, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4ad9a475ec12d941ad6b0faf61b7a87, type: 3}
 --- !u!1 &1896532014
 GameObject:
