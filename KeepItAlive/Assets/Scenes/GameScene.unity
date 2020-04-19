@@ -600,7 +600,6 @@ MonoBehaviour:
     type: 3}
   cosi:
   - {fileID: 7309088251054076437, guid: 40a026f7ca173ce45b067c10492b71d2, type: 3}
-  - {fileID: 6689296627381767276, guid: d360b0825baa4b4478aa2cb543d1db2e, type: 3}
   difficulty: 0
 --- !u!4 &597918135
 Transform:
