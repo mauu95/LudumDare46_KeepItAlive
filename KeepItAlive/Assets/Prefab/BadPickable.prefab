@@ -261,6 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGood: 0
+  explosion: {fileID: 1281475430237769870, guid: 1f24bbf6d012cd949924e770a1d507be,
+    type: 3}
 --- !u!50 &7309088251054076434
 Rigidbody2D:
   serializedVersion: 4
