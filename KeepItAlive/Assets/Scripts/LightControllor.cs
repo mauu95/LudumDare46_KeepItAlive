@@ -22,6 +22,7 @@ public class LightControllor : MonoBehaviour {
         if (elapsedTime >= timeBetweenGlowDown) {
             lightSize -= 1;
             elapsedTime = 0;
+            AudioManager.instance.PlayPickedBadStuff();
         }
         sceneLight.pointLightOuterRadius = Mathf.Lerp(sceneLight.pointLightOuterRadius, lightSize, 5 * Time.deltaTime);
         if (sceneLight.pointLightOuterRadius < 0.5f) {
