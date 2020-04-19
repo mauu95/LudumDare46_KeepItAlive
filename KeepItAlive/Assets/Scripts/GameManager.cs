@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
 
     public void EndGame() {
         isPlaying = false;
+        AudioManager.instance.StopMusic();
         if (currentScore > highScore) {
             highScore = currentScore;
             UIManager.instance.SetHighscore(highScore);
