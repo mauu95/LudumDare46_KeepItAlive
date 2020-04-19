@@ -886,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e09a5b91df0e45198492760cc3c2e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSize: 10
+  lightSize: 5
   lightSizeCap: 10
   timeBetweenGlowDown: 2
   fuoco: {fileID: 981758979}

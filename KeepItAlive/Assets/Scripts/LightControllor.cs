@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class LightControllor : MonoBehaviour {
-    public float lightSize = 10f;
+    public float lightSize = 2f;
     public float lightSizeCap = 10f;
     public float timeBetweenGlowDown = 5f;
 
