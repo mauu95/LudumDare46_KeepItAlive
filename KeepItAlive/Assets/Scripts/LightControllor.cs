@@ -9,6 +9,7 @@ public class LightControllor : MonoBehaviour {
     public float lightSizeCap = 10f;
     public float timeBetweenGlowDown = 5f;
 
+    public FuocoController fuoco;
     private Light2D sceneLight;
     private float elapsedTime = 0;
 
@@ -28,6 +29,8 @@ public class LightControllor : MonoBehaviour {
         if (sceneLight.pointLightOuterRadius < 0.5f) {
             GameManager.instance.EndGame();
         }
+
+        fuoco.SetIntensity(lightSize / 10f);
     }
 
     public void GotGoodStuff() {

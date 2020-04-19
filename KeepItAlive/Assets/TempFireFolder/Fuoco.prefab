@@ -19029,7 +19029,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6467433138197613906}
-  - component: {fileID: 6738130352382528483}
+  - component: {fileID: 981758978}
+  - component: {fileID: 3733266890007363679}
   m_Layer: 0
   m_Name: Fuoco
   m_TagString: Untagged
@@ -19052,7 +19053,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1.39, z: 0}
---- !u!114 &6738130352382528483
+--- !u!114 &981758978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19065,6 +19066,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRB: {fileID: 0}
+--- !u!114 &3733266890007363679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467433138197613917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbbe7f82d91e80449a58429e793c6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cose:
+  - {fileID: 6467433138806865171}
+  - {fileID: 6467433138165421707}
+  - {fileID: 6467433136815313944}
+  - {fileID: 6467433137390090124}
 --- !u!1 &6467433138806865180
 GameObject:
   m_ObjectHideFlags: 0
