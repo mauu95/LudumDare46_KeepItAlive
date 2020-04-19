@@ -5377,6 +5377,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_text
+      value: THE FLAME OF LIFE
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.80159074
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278246348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549134414657952114, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8584906
+      objectReference: {fileID: 0}
     - target: {fileID: 4549134414657952115, guid: dfe6b8b625b83464f8729ceb8fa94ba6,
         type: 3}
       propertyPath: m_RootOrder
