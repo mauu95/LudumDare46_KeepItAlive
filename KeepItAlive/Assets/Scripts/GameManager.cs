@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("GameScene");
         UIManager.instance.GoToGame();
         isPlaying = true;
+        AudioManager.instance.PlayMusic();
     }
 
     public void EndGame() {

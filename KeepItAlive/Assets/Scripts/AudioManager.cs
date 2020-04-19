@@ -7,8 +7,10 @@ public class AudioManager : MonoBehaviour {
     public AudioClip collisionAudio;
     public AudioClip goodStuffAudio;
     public AudioClip badStuffAudio;
+    public AudioClip music;
 
-    private AudioSource audioSource;
+    private AudioSource effectSource;
+    private AudioSource musicSource;
 
 
     // Start is called before the first frame update
@@ -16,23 +18,35 @@ public class AudioManager : MonoBehaviour {
         if (!instance) {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            audioSource = GetComponent<AudioSource>();
+            AudioSource[] sources = GetComponents<AudioSource>();
+            effectSource = sources[0];
+            musicSource = sources[1];
         } else if (instance != this)
             Destroy(gameObject);
     }
 
+    public void PlayMusic() {
+        musicSource.clip = music;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+
+    public void StopMusic() {
+        musicSource.Stop();
+    }
+
     public void PlayCollided() {
-        audioSource.clip = collisionAudio;
-        audioSource.Play();
+        effectSource.clip = collisionAudio;
+        effectSource.Play();
     }
 
     public void PlayPickedGoodStuff() {
-        audioSource.clip = goodStuffAudio;
-        audioSource.Play();
+        effectSource.clip = goodStuffAudio;
+        effectSource.Play();
     }
 
     public void PlayPickedBadStuff() {
-        audioSource.clip = badStuffAudio;
-        audioSource.Play();
+        effectSource.clip = badStuffAudio;
+        effectSource.Play();
     }
 }
