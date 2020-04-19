@@ -34,10 +34,17 @@ public class LightControllor : MonoBehaviour {
         if (lightSize > lightSizeCap)
             lightSize = lightSizeCap;
         elapsedTime = 0;
+        AudioManager.instance.PlayPickedGoodStuff();
     }
 
     public void GotBadStuff() {
         lightSize -= 2;
+        AudioManager.instance.PlayPickedBadStuff();
+    }
+
+    public void Collided() {
+        lightSize -= 1;
+        AudioManager.instance.PlayCollided();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -46,6 +53,14 @@ public class LightControllor : MonoBehaviour {
             if (po.isGood) GotGoodStuff();
             else GotBadStuff();
             Destroy(collision.gameObject);
+        } else if (collision.CompareTag("Platform")) {
+            Collided();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Platform")) {
+            Collided();
         }
     }
 }
