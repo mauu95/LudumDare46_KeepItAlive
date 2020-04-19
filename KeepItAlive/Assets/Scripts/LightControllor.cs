@@ -24,7 +24,9 @@ public class LightControllor : MonoBehaviour {
             elapsedTime = 0;
         }
         sceneLight.pointLightOuterRadius = Mathf.Lerp(sceneLight.pointLightOuterRadius, lightSize, 5 * Time.deltaTime);
-        // TODO: check for gameover
+        if (sceneLight.pointLightOuterRadius < 0) {
+            GameManager.instance.EndGame();
+        }
     }
 
     public void GotGoodStuff() {

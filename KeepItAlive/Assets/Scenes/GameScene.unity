@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   player: {fileID: 1257572839}
-  background: {fileID: 1606435748997804062, guid: 85d551e688d55514cb10b2fbbf191a10,
+  background: {fileID: 9161465026875213884, guid: 0a4d0aa63634b466bb5bf56c21938068,
     type: 3}
   goodPickable: {fileID: 999896434966783067, guid: bc840e2838c373a4e9719e141bcf00a8,
     type: 3}
@@ -610,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257572835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 7.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
