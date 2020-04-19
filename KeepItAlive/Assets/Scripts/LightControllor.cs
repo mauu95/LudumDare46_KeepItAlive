@@ -24,7 +24,7 @@ public class LightControllor : MonoBehaviour {
             elapsedTime = 0;
         }
         sceneLight.pointLightOuterRadius = Mathf.Lerp(sceneLight.pointLightOuterRadius, lightSize, 5 * Time.deltaTime);
-        if (sceneLight.pointLightOuterRadius < 0) {
+        if (sceneLight.pointLightOuterRadius < 0.5f) {
             GameManager.instance.EndGame();
         }
     }
